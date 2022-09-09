@@ -27,13 +27,13 @@ public class ResAssueredRequestAPI extends BaseSetup {
 
         //Response object
         response = httpsRequest.request(Method.GET, "/2");
-        logger.info("======Printing Response Body=====");
+
         String resposneBody = response.getBody().asString();
 
-        System.out.println("Respone Body is:\n" + resposneBody);
-        System.out.println("Status is:\n" + response.statusCode());
+        logger.info("Response Body\n" + resposneBody);
+        logger.info("Status is:" + response.statusCode());
         Assert.assertEquals(response.statusCode(), 200);
-        System.out.println("Status line:\n" + response.getStatusLine());
+        logger.info("Status line:" + response.getStatusLine());
         Assert.assertEquals(response.getStatusLine(), "HTTP/1.1 200 OK");
 
     }
