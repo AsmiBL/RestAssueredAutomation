@@ -1,13 +1,12 @@
 package restAssuredTest;
 
+import basePackage.BaseSetup;
 import io.restassured.RestAssured;
 import io.restassured.authentication.PreemptiveBasicAuthScheme;
 import io.restassured.http.Header;
 import io.restassured.http.Headers;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -16,18 +15,19 @@ import restAssueredUtility.XLUtils;
 
 import java.io.IOException;
 
-public class ResAssueredRequestAPI {
+public class ResAssueredRequestAPI extends BaseSetup {
+
     @Test(description = "TC1_GETRequest", priority = 0, enabled = true)
     void getUserDetails() {
         //Specify base URI
         RestAssured.baseURI = "https://reqres.in/api/users";
-
         //Request object
-        RequestSpecification httpsRequest = RestAssured.given();
+
+        httpsRequest = RestAssured.given();
 
         //Response object
-        Response response = httpsRequest.request(Method.GET, "/2");
-
+        response = httpsRequest.request(Method.GET, "/2");
+        logger.info("======Printing Response Body=====");
         String resposneBody = response.getBody().asString();
 
         System.out.println("Respone Body is:\n" + resposneBody);
@@ -44,17 +44,17 @@ public class ResAssueredRequestAPI {
         RestAssured.baseURI = "https://reqres.in/api/users";
 
         //Request
-        RequestSpecification httpRequest = RestAssured.given();
+        httpsRequest = RestAssured.given();
 
         JSONObject requestparams = new JSONObject();
         requestparams.put("name", "pragatiMM");
         requestparams.put("job", "automation");
 
-        httpRequest.header("Content-Type", "application/json");
-        httpRequest.body(requestparams.toJSONString());
+        httpsRequest.header("Content-Type", "application/json");
+        httpsRequest.body(requestparams.toJSONString());
 
         //Response
-        Response response = httpRequest.request(Method.POST);
+        response = httpsRequest.request(Method.POST);
 
         System.out.println("Respone Body is:\n" + response.getBody().asString());
         System.out.println("Status is:\n" + response.statusCode());
@@ -80,10 +80,10 @@ public class ResAssueredRequestAPI {
         RestAssured.baseURI = "https://reqres.in/api/users";
 
         //Request
-        RequestSpecification httpRequest = RestAssured.given();
+        httpsRequest = RestAssured.given();
 
         //Response
-        Response response = httpRequest.request(Method.GET, "/2");
+        response = httpsRequest.request(Method.GET, "/2");
 
         System.out.println("Respone Body is:\n" + response.getBody().asString());
         System.out.println("Status is:\n" + response.statusCode());
@@ -108,10 +108,10 @@ public class ResAssueredRequestAPI {
         RestAssured.authentication = AuthScheme;
 
         //Request
-        RequestSpecification httpRequest = RestAssured.given();
+        httpsRequest= RestAssured.given();
 
         //Response
-        Response response = httpRequest.request(Method.GET, "/");
+        response = httpsRequest.request(Method.GET, "/");
 
         System.out.println("Respone Body is:\n" + response.getBody().asString());
         System.out.println("Status is:\n" + response.statusCode());
@@ -123,17 +123,17 @@ public class ResAssueredRequestAPI {
         RestAssured.baseURI = "https://reqres.in/api/users";
 
         //Request
-        RequestSpecification httpRequest = RestAssured.given();
+        httpsRequest = RestAssured.given();
 
         JSONObject requestparams = new JSONObject();
         requestparams.put("name", name);
         requestparams.put("job", role);
 
-        httpRequest.header("Content-Type", "application/json");
-        httpRequest.body(requestparams.toJSONString());
+        httpsRequest.header("Content-Type", "application/json");
+        httpsRequest.body(requestparams.toJSONString());
 
         //Response
-        Response response = httpRequest.request(Method.POST);
+        response = httpsRequest.request(Method.POST);
 
         System.out.println("Respone Body is:\n" + response.getBody().asString());
         System.out.println("Status is:\n" + response.statusCode());
@@ -147,17 +147,17 @@ public class ResAssueredRequestAPI {
         RestAssured.baseURI = "https://reqres.in/api/users";
 
         //Request
-        RequestSpecification httpRequest = RestAssured.given();
+        httpsRequest= RestAssured.given();
 
         JSONObject requestparams = new JSONObject();
         requestparams.put("name", name);
         requestparams.put("job", role);
 
-        httpRequest.header("Content-Type", "application/json");
-        httpRequest.body(requestparams.toJSONString());
+        httpsRequest.header("Content-Type", "application/json");
+        httpsRequest.body(requestparams.toJSONString());
 
         //Response
-        Response response = httpRequest.request(Method.POST);
+        response = httpsRequest.request(Method.POST);
 
         System.out.println("Respone Body is:\n" + response.getBody().asString());
         System.out.println("Status is:\n" + response.statusCode());
