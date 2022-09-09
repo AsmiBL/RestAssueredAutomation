@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
-          name="C:/Users/pragati.eknath.magar/Desktop/Trails/RestAssueredProject/RestAssueredAutomation">
+          name="C:/Users/pragati.eknath.magar/Desktop/Trails/RestAssueredProject/RestAssueredAutomation/src/test/restAssueredTest/ResAssueredRequestAPI.java">
         <classes>
-            <class name="com.test.RestAssueredTest.ResAssueredRequestAPI">
+            <class name="restAssuredTest.ResAssueredRequestAPI">
                 <methods>
-                 <!--   <include name="getUserDetails"/>
+                   <!-- <include name="getUserDetails"/>
                     <include name="createUser"/>
                     <include name="responseValidation"/>
                     <include name="authenticationValidation"/>
