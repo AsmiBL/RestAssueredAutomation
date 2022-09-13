@@ -19,7 +19,7 @@ public class BaseSetup {
     @BeforeClass
     public void setup() throws IOException {
 
-        logger=getLogger("RestAssueredAutomation");
+        logger=getLogger("Log info :");
        /*//code to load property file
         Properties properties=new Properties();
         properties.load(new FileInputStream("Log4J.properties"));

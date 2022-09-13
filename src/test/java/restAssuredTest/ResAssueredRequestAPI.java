@@ -31,6 +31,7 @@ public class ResAssueredRequestAPI extends BaseSetup {
         String resposneBody = response.getBody().asString();
 
         logger.info("Response Body\n" + resposneBody);
+
         logger.info("Status is:" + response.statusCode());
         Assert.assertEquals(response.statusCode(), 200);
         logger.info("Status line:" + response.getStatusLine());
@@ -164,6 +165,7 @@ public class ResAssueredRequestAPI extends BaseSetup {
         System.out.println("Id  is:\n" + response.jsonPath().get("id").toString());
 
     }
+
 
     @DataProvider(name = "userdatastatic")
     Object[][] getuserData() {
