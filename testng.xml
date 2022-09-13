@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true"
-          name="C:/Users/pragati.eknath.magar/Desktop/Trails/RestAssueredProject/RestAssueredAutomation/src/test/restAssueredTest/ResAssueredRequestAPI.java">
+    <listeners>
+        <listener class-name="restAssueredUtility.Listeners"/>
+   </listeners>
+    <test verbose="2" name="ResAssueredRequestAPI">
         <classes>
             <class name="restAssuredTest.ResAssueredRequestAPI">
                 <methods>
-                   <!-- <include name="getUserDetails"/>
-                    <include name="createUser"/>
+                    <include name="getUserDetails"/>
+                     <include name="createUser"/>
                     <include name="responseValidation"/>
                     <include name="authenticationValidation"/>
-                    <include name="createMultiplUserwithStaticData"/>-->
+                    <include name="createMultiplUserwithStaticData"/>
                     <include name="createMultiplUserwithDyanamicData"/>
+                </methods>
+            </class>
+            <class name="restAssuredTest.TestA">
+                <methods>
+                    <include name="createRandomUser"/>
                 </methods>
             </class>
         </classes>
